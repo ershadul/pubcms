@@ -1,0 +1,88 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block meta_includes %}
+    {%  if article.description %}
+        <meta name="description" content="{{ article.description }}" />
+    {% else %}
+        <meta name="description" content="{{ article.intro_text }}" />
+    {% endif %}
+{% endblock %}
+
+
+{% block title %} {{ article.get_title }} - {{ article.issue.title }}{% endblock %}
+
+
+{% block content_header %}
+      <a name="content"><!-- something --></a>
+      <p style="color: #339933; font-size: 20px;">{{ article.issue.title }}</p>
+      <h2 class="left">{{ article.section.title }}</h2>
+      <div class="right">
+          <a class="all-articles" href="{{ article.section.get_absolute_url }}">{{ locals.all_articles }} &raquo;</a>
+      </div>
+      <div class="clear"></div>
+{% endblock %}
+
+{% block content %}
+    <div id="article-header">
+        {% if article.tag_line %}
+            <p>{{ article.tag_line }}</p>
+        {% endif %}
+        <h1>{{ article.title }}</h1>
+        <div id="article-subheader">
+            {% if article.part_number %}
+                <p>{{ locals.part }}: {{ article.part_number }}</p>
+            {% endif %}
+            {% if article.author_name %}
+                <p class="author-info left">
+                    <span class="by">{{ locals.written_by }}</span>
+                    <span>{{ article.author_name }}</span>
+                    {% if article.is_translated and article.translator_name %}
+                         <span class="by">{{ locals.translated_by }}</span>
+                         <span>{{ article.translator_name }}</span>
+                    {% endif %}
+                </p>
+            {% endif %}
+            <div id="article-tools" class="right">
+                 <div id="share-tools" class="right">
+                    <span>{{ locals.share }}:&nbsp;</span>
+                    <a class="twitter" title="twitter" href="http://twitter.com/home?status={{ article.get_title }} http://www.alqualam.com{{ article.get_absolute_url }}" rel="nofollow" target="_blank">&nbsp;</a>
+                    <a class="delicious" title="delicious" href="http://del.icio.us/post?url=http://www.alqualam.com{{ article.get_absolute_url }}&title={{ article.get_title }}" rel="nofollow" target="_blank">&nbsp;</a>
+                    <a class="digg" title="digg" href="http://digg.com/submit?phase=2&url=http://www.alqualam.com{{ article.get_absolute_url }}&title={{ article.get_title }}" rel="nofollow" target="_blank">&nbsp;</a>
+                 </div>
+                 <a class="print right" href="{{ article.get_absolute_url }}/print">{{ locals.print }}</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="body-text">{{ article.body_text|safe }}</div>
+    <div class="controls">
+        <div class="left">
+            <a href="#content">{{ locals.top }}</a>
+        </div>
+         <div class="right" style="padding-left: 20px;">
+            <span>{{ locals.share }}:&nbsp;</span>
+            <a class="twitter" title="twitter" href="http://twitter.com/home?status={{ article.get_title }} http://www.alqualam.com{{ article.get_absolute_url }}" rel="nofollow" target="_blank">&nbsp;</a>
+            <a class="delicious" title="delicious" href="http://del.icio.us/post?url=http://www.alqualam.com{{ article.get_absolute_url }}&title={{ article.get_title }}" rel="nofollow" target="_blank">&nbsp;</a>
+            <a class="digg" title="digg" href="http://digg.com/submit?phase=2&url=http://www.alqualam.com{{ article.get_absolute_url }}&title={{ article.get_title }}" rel="nofollow" target="_blank">&nbsp;</a>
+         </div>
+         <a class="print right" href="{{ article.get_absolute_url }}/print">{{ locals.print }}</a>
+         <div class="clear"></div>
+    </div>
+{% endblock %}
+
+{% block right_column %}
+    {% if related_articles %}
+        <div class="border"></div>
+        <div class="container">
+            <h2>{{ locals.related_articles }}</h2>
+            <ul>
+            {% for a in related_articles %}
+                <li>
+                    <p class="issue">{{ a.issue.title }}</p>
+                    <a href="{{ a.get_absolute_url }}">{{ a.get_title }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+
+    {% endif %}
+{% endblock %}

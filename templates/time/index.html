@@ -1,0 +1,44 @@
+{% extends "time/layouts/issue_layout.html" %}
+
+{% block title %} {{ issue.title }} {% endblock %}
+
+{% block content %}
+    <div style="margin-top: 10px;">
+        <div id="left-column" class="left">
+            {% for section in left_sections %}
+                {% if section.articles or section.sub_sections %}
+                {% include "partials/section_box.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div id="mid-column" class="left">
+            {% for section in right_sections %}
+                {% if section.articles or section.sub_sections %}
+                {% include "partials/section_box.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+{% endblock %}
+
+ {% block entire_right_column  %}
+    <div class="border"></div>
+    <div class="container">
+        <h2>{{ locals.cover_image }}</h2>
+        <div id="cover-image">
+             <img src="{{ issue.image.url }}" />
+        </div>
+    </div>
+    
+    <div class="border"></div>
+    {% include "partials/search_box.html" %}
+
+    <div class="border"></div>
+    <a id="font-help" href="/help/font">
+        <img src="/media/img/font_help.png" />
+    </a>
+    {% block right_column %}
+        {% include "partials/top_articles.html" %}
+    {% endblock %}
+{% endblock %}

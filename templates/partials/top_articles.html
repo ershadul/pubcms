@@ -1,0 +1,13 @@
+{% load custom_tags %}
+<div class="border"></div>
+<div class="container">
+    <h2>{{ locals.top_articles }}</h2>
+    <ul id="top-articles">
+    {% for a in top_articles|slice:":10" %}
+        <li>
+            <p class="issue">{{ a.issue.title }}</p>
+            <a href="{{ a.get_absolute_url }}">{{ a.get_title }}</a><span class="n-clicks">({{ a.n_clicks|bengalinumber }})</span>
+            </li>
+    {% endfor %}
+    </ul>
+</div>

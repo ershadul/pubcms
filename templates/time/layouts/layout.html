@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{%  block wrapper  %}
+     <div id="header">
+         <p id="bismilla">{{ locals.bismillah }}</p>
+         <div id="site-logo" class="left">
+            <p id="slogan">{{ site.settings.slogan }}</p>
+            <h1 id="site-name">{{ site.name }}</h1>
+         </div>
+         <div id="site-info" class="right">
+            <h4>{{ locals.editor_name }}</h4>
+            <p style="font-size: 15px;color: #eee;"><i>{{ locals.dua_3 }}</i></p>
+            <p>{{ locals.publisher|safe }}</p>
+         </div>
+         <div class="clear"></div>
+     </div>
+     <div id="top-navigation">
+        <ul>
+            {% for m in main_menus %}
+                <li><a {% if m.is_selected %} class="selected" {% endif %} href="{{ m.link }}">{{ m.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="clear"></div>
+     </div>
+     <div id="page">
+        {% block page %}
+            {% block breadcrumb %}
+                {% include "partials/breadcrumb.html" %}
+            {% endblock %}
+            <div id="page-content" class="left">
+                {% block page_content %}
+                    <div class="container-box">
+                        <div id="content-header">{% block content_header %}{% endblock %}</div>
+                    </div>
+                    {% block content %}{% endblock %}
+                {% endblock %}
+            </div>
+            <div id="right-column" class="left">
+                {% block entire_right_column  %}
+                    <div class="border"></div>
+                    {% include "partials/search_box.html" %}
+                    <div class="border"></div>
+                    <a id="font-help" href="/help/font">
+                        <img src="/media/img/font_help.png" />
+                    </a>
+                    {% block right_column %}
+                        {% include "partials/top_articles.html" %}
+                    {% endblock %}
+                {% endblock %}
+            </div>
+            <div class="clear"></div>
+        {% endblock %}
+     </div>
+     <div id="footer">
+          <p>{{  site.settings.get_copyright_info }}</p>
+          <p style="font-size: 11px; margin-top: 3px;">Made with <a href="http://www.djangoproject.com">django</a> by <a href="http://www.djangoguys.com">DjangoGuys</a></p>
+     </div>
+
+{%  endblock %}
+
+{% block js %}
+    {% comment %}
+    <script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.corners.js"></script>
+    <script type="text/javascript"  src="/media/themes/{{ site.settings.template }}/js/site.js"></script>
+    {% endcomment %}
+{% endblock %}

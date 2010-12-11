@@ -1,0 +1,20 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ selected_menu.title }} {% endblock %}
+
+{% block content_header %}
+      <h1>{{ selected_menu.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <ul id="archive">
+            {% for issue in issues %}
+                <li class="left">
+                    <img src="{{ issue.image.url }}" alt="{{ issue.title }}" title="{{ issue.title }}" />
+                    <h3><a href="{{ issue.get_absolute_url }}">{{ issue.title }}</a></h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

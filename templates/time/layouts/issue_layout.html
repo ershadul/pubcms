@@ -1,0 +1,32 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block content_header %}
+    <div id="issue-info">
+        <p class="status left">{% if issue.is_default %} {{ locals.current_issue }} {% else %} {{ locals.back_issue }} {% endif %}</p>
+        <div class="clear"></div>
+        <h1 class="left">{{ issue.title }}</h1>
+        <p class="right issue-number">
+            <span>{{ locals.issue_year }}:</span>
+            <span class="number rc">{{ issue.issue_year }}</span>
+            <span style="padding-left: 15px;">{{ locals.number }}:</span>
+            <span class="number rc">{{ issue.issue_number }}</span>
+        </p>
+        <div class="clear"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-top: 10px;">
+        <div id="left-column" class="left">
+            {% for section in left_sections %}
+                {% include "partials/section_box.html" %}
+            {% endfor %}
+        </div>
+        <div id="mid-column" class="left">
+            {% for section in right_sections %}
+               {% include "partials/section_box.html" %}
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+{% endblock %}

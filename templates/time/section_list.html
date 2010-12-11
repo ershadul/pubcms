@@ -1,0 +1,23 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ locals.all_sections }} {% endblock %}
+
+{% block content_header %}
+    <h1>{{ locals.all_sections }}</h1>
+{% endblock %}
+
+{% block content %}
+    <ul style="margin: 10px 200px 10px 10px;">
+        {% for section in sections %}
+            <li style="border-bottom: 1px solid #ccc; padding: 5px 0;">
+                <a class="parent" href="{{ section.get_absolute_url }}">{{ section.title }} &raquo;</a>
+                <ul style="margin: 5px 10px">
+                {% for s in section.child_sections.all %}
+                    <li style="padding: 5px 0;"><a href="{{ s.get_absolute_url }}">{{ s.title }} &raquo;</a></li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% if article.tag_line %}
+    <p>{{ article.tag_line }}</p>
+{% endif %}
+{% if not article.section.parent %}
+    <h4><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h4>
+{% else %}
+    {% if article.title %}
+        <span class="sub-header"><a href="{{ article.section.get_absolute_url }}">{{ article.section.title }} &raquo;</a></span>
+    {% endif %}
+    <h4><a href="{{ article.get_absolute_url }}">{{ article.get_title }}</a></h4>
+{% endif %}
+{% if article.part_number %}
+    <p>{{ locals.part }}: {{ article.part_number }}</p>
+{% endif %}
+{% if article.author_name %}
+    <p class="author-info">
+        <span class="by">{{ locals.written_by }}</span>
+        <span>{{ article.author_name }}</span>
+        {% if article.is_translated and article.translator_name %}
+             <span class="by">{{ locals.translated_by }}</span>
+             <span>{{ article.translator_name }}</span>
+        {% endif %}
+    </p>
+{% endif %}
+<p class="intro_text">{{ article.intro_text|truncatewords:25 }}</p>
+<a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
+<div class="clear"></div>

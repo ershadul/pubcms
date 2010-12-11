@@ -1,0 +1,49 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ selected_menu.title }} {% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="noindex, nofollow" />
+{% endblock %}
+
+
+{% block content_header %}
+      <h1>{{ selected_menu.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% if errors %}
+            <ul class="errors">
+                 {%  for e in errors.values %}
+                    <li>{{ e }}</li>
+                 {% endfor %}
+            </ul>
+
+        {% endif %}
+        {% if not successful %}
+        <form method="POST">
+            <fieldset>
+                <label>{{ locals.name }}</label>
+                <input type="text" name="name" value="{{ data.name }}" />
+                <label>{{ locals.email }}</label>
+                <input type="text" name="email" value="{{ data.email }}" />
+                <label>{{ locals.feedback }}</label>
+                <textarea name="message">{{ data.message }}</textarea>
+                
+                <label>{{ locals.math_question }}</label>
+                <label class="left" style="font-size: 22px; font-weight: bold;">{{ captcha_text }}</label>
+                <input class="left" type="text" name="captcha_text" style="margin-left: 10px; margin-top: 3px; width: 50px;"/>
+                <input  type="hidden" name="captcha_hash" value="{{ captcha_hash }}"/>
+                <div class="clear"></div>
+
+                <input type="submit" value="{{ locals.submit }}" style="width: 100px; margin-top: 15px;"/>
+            </fieldset>
+        </form>
+        {% else %}
+        <div>
+            <h2>{{ message }}   </h2>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

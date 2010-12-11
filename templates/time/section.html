@@ -1,0 +1,54 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ section.title }} {% endblock %}
+
+{% block content_header %}
+    <h1>{{ section.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <ul id="section-articles">
+        {% for article in articles %}
+            <li class="article">
+
+                <span>{{ article.issue.title }}</span>
+                <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                {% if article.part_number %}
+                    <p>{{ locals.part }}: {{ article.part_number }}</p>
+                {% endif %}
+                {% if article.author_name %}
+                    <p class="author-info">
+                        <span class="by">{{ locals.written_by }}</span>
+                        <span>{{ article.author_name }}</span>
+                        {% if article.is_translated and article.translator_name %}
+                             <span class="by">{{ locals.translated_by }}</span>
+                             <span>{{ article.translator_name }}</span>
+                        {% endif %}
+                    </p>
+                {% endif %}
+                <p>{{ article.intro_text|truncatewords:50 }}...</p>
+                <a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
+                <div class="clear"></div>
+                {% comment %}{% include "partials/article.html" %}{% endcomment %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% include "partials/paginator.html" %}
+    
+{% endblock %}
+
+{% block right_column %}
+    {% if related_sections %}
+        <div class="border"></div>
+        <div class="container">
+            <h2>{{ locals.other_sections }}</h2>
+            <ul>
+            {% for s in related_sections %}
+                <li><a href="{{ s.get_absolute_url }}">{{ s.title }} &raquo;</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% include "partials/top_articles.html" %}
+{% endblock %}

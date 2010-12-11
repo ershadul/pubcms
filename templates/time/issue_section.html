@@ -1,0 +1,56 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ section }} {% endblock %}
+
+{% block content_header %}
+      <p style="color: #339933; font-size: 20px;">{{ issue.title }}</p>
+      <h1 class="left">{{ section.title }}</h1>
+      <div class="right">
+          <a class="all-articles" href="{{ section.get_absolute_url }}">{{ locals.all_articles }} &raquo;</a>
+      </div>
+      <div class="clear"></div>
+{% endblock %}
+{% block content %}
+        {% for article in articles %}
+            <div class="article section-article {% if article.is_last %}last{% endif %}">
+                {% if article.title %}<h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3> {% endif %}
+                {% if article.part_number %}
+                    <p>{{ locals.part }}: {{ article.part_number }}</p>
+                {% endif %}
+                {% if article.author_name %}
+                    <p class="author-info">
+                        <span class="by">{{ locals.written_by }}</span>
+                        <span>{{ article.author_name }}</span>
+                        {% if article.is_translated and article.translator_name %}
+                             <span class="by">{{ locals.translated_by }}</span>
+                             <span>{{ article.translator_name }}</span>
+                        {% endif %}
+                    </p>
+                {% endif %}
+                <p class="intro_text">{{ article.intro_text|truncatewords:25 }}<a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} »</a>
+            </div>
+        {% endfor %}
+
+        {% for article in child_section_articles %}
+            <div class="article section-article {% if article.is_last %}last{% endif %}">
+                <h3 style="color: #777">{{ article.section.title }}</h3>
+                {% if article.title %}<h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3> {% endif %}
+                {% if article.part_number %}
+                    <p>{{ locals.part }}: {{ article.part_number }}</p>
+                {% endif %}
+                {% if article.author_name %}
+                    <p class="author-info">
+                        <span class="by">{{ locals.written_by }}</span>
+                        <span>{{ article.author_name }}</span>
+                        {% if article.is_translated and article.translator_name %}
+                             <span class="by">{{ locals.translated_by }}</span>
+                             <span>{{ article.translator_name }}</span>
+                        {% endif %}
+                    </p>
+                {% endif %}
+                <p class="intro_text">{{ article.intro_text }}</p>
+                <a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} »</a>
+                <div class="clear"></div>
+            </div>
+        {% endfor %}
+{% endblock %}

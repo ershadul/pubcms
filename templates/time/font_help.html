@@ -1,0 +1,35 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} Bangla Font Help {% endblock %}
+
+{% block content_header %}
+      <h1>Bangla Font Help</h1>
+{% endblock %}
+
+{% block content %}
+    <div id="body-text">
+        <h2>Make Your PC Bangla Compatible</h2>
+        <div>
+            <p>We are using Unicode Bangla in this site. To make you PC Unicode Bangla Compatible, just follow these two steps:</p>
+            <br />
+            <ul>
+                <li>
+                    <p>1.	<a href="/media/downloads/SolaimanLipi.ttf">Download</a> the SolaimanLipi font.</p>
+                    <p>Then copy and post this font in the fonts directory of your operating system. Generally it is "C:\Windows\Fonts"</p>
+                    <br />
+                </li>
+                <li>
+                    <p>2.	If you are using Windows XP then you need to install a script. Please download it from here <a href="http://omicronlab.com/download/tools/iComplex_2.0.0.exe">icomplex</a>  </p>
+                    <br />
+                </li>
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block entire_right_column  %}
+    <div class="border"></div>
+    {% include "partials/search_box.html" %}
+    {% include "partials/top_articles.html" %}
+{% endblock %}

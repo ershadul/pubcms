@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon" />
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="/media/themes/{{ site.settings.template }}/css/site.css" />          
+	{% endblock %}
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="google-site-verification" content="oMB1foUnuuYKsG-u23Xm3FYghu2NM5R3ngGBCGXVfrk" />
+    
+    {% block meta_robots %}
+        <meta name="robots" content="noindex, nofollow" />
+    {% endblock %}
+    {% block meta_includes %}{% endblock %}
+    <title>{% block entire_title %} {% block title %}{{ site.settings.slogan }} {% endblock %} | {{ site.name }} {% endblock %}</title>
+  </head>
+  <body>
+    {% block body %}
+        <div id="wrapper">
+              {% block wrapper %}
+              {% endblock %}
+        </div>
+    {% endblock %}
+  {% block js %}{% endblock %}
+  {%  include "partials/ga.html" %}
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{% if breadcrumb %}
+    <div id="breadcrumb">
+        {% for crumb in breadcrumb %}
+            <a href="{{ crumb.link }}">{{ crumb.name }}</a>
+            <span>»</span>
+        {% endfor %}
+    </div>
+{% endif %}

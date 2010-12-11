@@ -1,0 +1,11 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} {{ selected_menu.title }} {% endblock %}
+
+{% block content_header %}
+      <h1>{{ selected_menu.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div id="body-text">{{ site.settings.about_us|safe }}</div>
+{% endblock %}

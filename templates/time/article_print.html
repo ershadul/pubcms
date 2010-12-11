@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/media/css/print.css" /> 
+{% endblock %}
+
+{% block meta_robots %}
+        <meta name="robots" content="noindex, nofollow" />
+{% endblock %}
+
+{% block title %} {{ article.get_title }} - {{ article.issue.title }} {% endblock %}
+
+{% block body %}
+    <h4>{{ site.settings.slogan }}</h4>
+    <h2>{{ site.name }}</h2>
+     <p style="color: #444;"><span>{{ article.issue.title }}</span><span style="color: #767676"> | </span><span>{{ article.section.title }}</span></p>
+    {% if article.tag_line %}
+            <p>{{ article.tag_line }}</p>
+    {% endif %}
+    <h1>{{ article.title }}</h1>
+    <div id="article-subheader">
+        {% if article.part_number %}
+            <p>{{ locals.part }}: {{ article.part_number }}</p>
+        {% endif %}
+        {% if article.author_name %}
+            <p>
+                <span>{{ locals.written_by }}</span>
+                <span>{{ article.author_name }}</span>
+                {% if article.is_translated and article.translator_name %}
+                     <span>{{ locals.translated_by }}</span>
+                     <span>{{ article.translator_name }}</span>
+                {% endif %}
+            </p>
+        {% endif %}
+    </div>
+    <div id="body-text">
+        {{ article.body_text|safe }}
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "time/layouts/layout.html" %}
+
+{% block title %} Search {% endblock %}
+
+{% block content_header %}
+      <h1>{{ locals.search_result }}</h1>
+{% endblock %}
+
+{% block content %}
+     <div id="search-form">
+        <br />
+        <form method="GET" action="/search">
+            <input class="search left" type="text" name="query" value="{{ query }}"/>
+            <input class="button left" type="submit" value="{{ locals.search }}" />
+        </form>
+        <div class="clear"></div>
+        <br />
+    </div>
+    <div>
+        {% for article in articles %}
+            <div class="article section-article {% if article.is_last %}last{% endif %}">
+                <p class="issue">{{ article.issue.title }}</p>
+                <h3><a href="{{ article.get_absolute_url }}">{{ article.get_title }}</a></h3>
+                {% if article.part_number %}
+                    <p>{{ locals.part }}: {{ article.part_number }}</p>
+                {% endif %}
+                {% if article.author_name %}
+                    <p class="author-info">
+                        <span class="by">{{ locals.written_by }}</span>
+                        <span>{{ article.author_name }}</span>
+                        {% if article.is_translated and article.translator_name %}
+                             <span class="by">{{ locals.translated_by }}</span>
+                             <span>{{ article.translator_name }}</span>
+                        {% endif %}
+                    </p>
+                {% endif %}
+                <p class="intro_text">{{ article.intro_text|truncatewords:25 }}<a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
+                <div class="clear"></div>
+            </div>
+
+        {% endfor %}
+    </div>
+    {% include "partials/paginator.html" %}
+{% endblock %}
+
+{% block entire_right_column  %}
+    {% include "partials/top_articles.html" %}
+{% endblock %}

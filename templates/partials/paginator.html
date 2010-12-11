@@ -1,0 +1,29 @@
+{% if page and not page.one_page_only %}
+    <ul id="paginator">
+        {% if page.has_previous %}
+            <li>
+                <a href="{{ page.url }}{{ page.previous_page_number }}">&laquo; {{ locals.previous}}</a>
+            </li>
+        {% endif %}
+
+        {% load custom_tags %}
+
+        {% for p in page.page_range %}
+            {% if not p %}
+                <li style="border: none;">...</li>
+            {% else %}
+                {% ifequal p page.number %}
+                    <li class="selected">{{ p|bengalinumber }}</li>
+                {% else %}
+                    <li><a href="{{ page.url }}{{ p }}">{{ p|bengalinumber }}</a></li>
+                {% endifequal %}
+            {% endif %}
+        {% endfor %}
+
+        {% if page.has_next %}
+            <li>
+                <a href="{{ page.url }}{{ page.next_page_number }}">{{ locals.next }} &raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

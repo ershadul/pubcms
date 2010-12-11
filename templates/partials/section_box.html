@@ -1,0 +1,24 @@
+<div class="section-box {% if section.is_first %}first{% endif %}" >
+    <div class="doublerule-divider"></div>
+    <h2>{{ section.title }}</h2>
+    <ul>
+        {% for article in section.articles|slice:":-1" %}
+            <li class="article">{% include "partials/article.html" %}</li>
+        {% endfor %}
+        {% for article in section.articles|slice:"-1:" %}
+            <li class="article last">{% include "partials/article.html" %}</li>
+        {% endfor %}
+    </ul>
+
+    {% for sec in section.sub_sections %}
+       <div class="clear"></div>
+       <ul>
+            {% for article in sec.articles|slice:":-1" %}
+                <li class="article">{% include "partials/article.html" %}</li>
+            {% endfor %}
+            {% for article in sec.articles|slice:"-1:" %}
+                <li class="article last">{% include "partials/article.html" %}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
