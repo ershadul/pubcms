@@ -29,9 +29,14 @@ def get_main_menu():
             'link': '/contact'
         } ,
         {
-        'name': 'feedback',
-        'title': u'মতামত',
-        'link': '/feedback'
+            'name': 'feedback',
+            'title': u'মতামত',
+            'link': '/feedback'
+        },
+        {
+            'name': 'rss_feed',
+            'title': 'RSS',
+            'link': '/feeds/rss/current'
         }
     ]
     return main_menu
