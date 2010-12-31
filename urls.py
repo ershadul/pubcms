@@ -11,6 +11,7 @@ handler500 = 'pubcms.views.show_500'
 urlpatterns = patterns('',
     #(r'^admin/', include(admin.site.urls)),
     #(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
+    (r'^feeds/', include('pubcms.feeds.urls')),
     (r'^issue/(?P<issue_date>[0-9\-]+)/article/', include('pubcms.articles.urls')),
     (r'^issue/(?P<issue_date>[0-9\-]+)/section/', include('pubcms.sections.urls')),
     (r'^section$', 'pubcms.sections.views.index'),
