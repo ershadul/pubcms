@@ -21,7 +21,10 @@ def generate_captcha():
     return (text, texthash)
 
 def check_captcha(imgtext, imghash):
-    SALT = settings.SECRET_KEY[:20]
-    if imghash == sha.new(SALT + imgtext).hexdigest():
-        return True
+    try:
+        SALT = settings.SECRET_KEY[:20]
+        if imghash == sha.new(SALT + imgtext).hexdigest():
+            return True
+    except:
+        pass
     return False

@@ -8,4 +8,10 @@ class SectionAdmin(admin.ModelAdmin):
     ordering = ('parent', 'order',)
     list_filter = ('is_regular', 'is_published',)
 
+    class Media:
+        js = ('/media/js/jquery-1.4.2.min.js',
+            '/media/js/tiny_mce/tiny_mce.js',
+            '/media/js/textareas.js',
+        )
+
 admin.site.register(Section, SectionAdmin)
