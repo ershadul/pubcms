@@ -18,7 +18,7 @@ class Article(models.Model):
     title = models.CharField(max_length=256, default='', blank=True)
     slug_title = models.SlugField(max_length=256, blank=True, default='')
     part_number = models.CharField(max_length=10, default='', blank=True)
-    intro_text = models.TextField()
+    intro_text = models.TextField(blank=True, default='')
     body_text = models.TextField()
 
     is_translated = models.BooleanField(default=False)
@@ -61,7 +61,7 @@ class Article(models.Model):
     
     def __unicode__(self):
         if not self.title:
-            return u'%s - %s' % (self.section, self.issue)
+            return self.section.title
         return self.title
 
 	
