@@ -16,7 +16,20 @@ def index(request, issue_date=''):
     except Exception, e:
         raise Http404
     
-    articles = list(issue.article_set.filter(is_published=True).order_by('order').all())
+    temp_articles = list(issue.article_set.filter(is_published=True).order_by('order').all())
+    articles = []
+    for a in temp_articles:
+        if a.section:
+            if a.section.parent:
+                if a.section.parent.is_published:
+                    articles.append( a )
+            else:
+                if a.section.is_published:
+                    articles.append( a )
+        else:
+            articles.append( a )
+    
+
     section_ids = []
     for article in articles:
         if article.section_id not in section_ids:
