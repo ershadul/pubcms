@@ -34,7 +34,7 @@
                         {% endif %}
                     </p>
                 {% endif %}
-                <p class="intro_text">{{ article.intro_text|truncatewords:25 }}<a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
+                <p class="intro_text">{{ article.intro_text|safe }}<a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
                 <div class="clear"></div>
             </div>
 
