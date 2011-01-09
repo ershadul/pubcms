@@ -26,7 +26,7 @@ def show(request, issue_date, article_id):
              'name': article.issue.title,
              'link': link
             })
-    if article.section.parent:
+    if article.section and article.section.parent:
         breadcrumb.append(
             {
                 'name': u'%s' % article.section.parent.title,
