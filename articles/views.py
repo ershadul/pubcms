@@ -32,13 +32,14 @@ def show(request, issue_date, article_id):
                 'name': u'%s' % article.section.parent.title,
                 'link': u'%s%s' % (article.issue.get_absolute_url(), article.section.parent.get_absolute_url())
             }
-    )    
-    breadcrumb.append(
+    )
+    if article.section:
+        breadcrumb.append(
             {
                 'name': u'%s' % article.section.title,
                 'link': u'%s%s' % (article.issue.get_absolute_url(), article.section.get_absolute_url())
             }
-    )
+        )
 
     menus = request.main_menus
     for menu in menus:
