@@ -45,17 +45,16 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('intro_text', 'body_text',)
         }),
         ('Author Information', {
-            'classes': ('collapse',),
             'fields': ('is_translated', 'author_name', 'author_info', 'translator_name', 'translator_info')
+        }),
+        ('Advanced Publishing Options', {
+            'fields': ('is_published', 'order',) #'is_featured', 'is_on_frontpage')
         }),
         ('Search Engine Optimization', {
             'classes': ('collapse',),
             'fields': ('keywords', 'description',)
         }),
-        ('Advanced Publishing Options', {
-            'classes': ('collapse',),
-            'fields': ('is_published', 'order',) #'is_featured', 'is_on_frontpage')
-        }),
+
     )
 
     class Media:

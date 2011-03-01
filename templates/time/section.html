@@ -26,7 +26,7 @@
                         {% endif %}
                     </p>
                 {% endif %}
-                <p>{{ article.intro_text|truncatewords:50 }}...</p>
+                <p>{{ article.intro_text|safe }}...</p>
                 <a class="read-more" href="{{ article.get_absolute_url }}">{{ locals.read_more }} &raquo;</a>
                 <div class="clear"></div>
                 {% comment %}{% include "partials/article.html" %}{% endcomment %}

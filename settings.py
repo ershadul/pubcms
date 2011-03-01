@@ -17,16 +17,9 @@ MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'mysql'
 DATABASE_HOST = ''
-
-if DEBUG:
-    DATABASE_NAME = 'pubcms'
-    DATABASE_USER = 'root'
-    DATABASE_PASSWORD = ''
-else:
-    DATABASE_NAME = 'ershadul_qualam'
-    DATABASE_USER = 'ershadul_qualam'
-    DATABASE_PASSWORD = 'qualam2010'
-
+DATABASE_NAME = 'pubcms'
+DATABASE_USER = 'root'
+DATABASE_PASSWORD = ''
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -107,12 +100,7 @@ INSTALLED_APPS = (
     'pubcms.tags_filters',
 )
 
-# Emails
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'admin@alqualam.com'
-EMAIL_HOST_PASSWORD = 'alq90alq'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-SERVER_EMAIL = EMAIL_HOST_USER
-DEFAULT_FROM_EMAIL = 'ALQUALAM <noReply@alqualam.com>'
-FEEDBACK_EMAIL = 'feedback@alqualam.com'
+try:
+    from pubcms.local_settings import *
+except:
+    pass
