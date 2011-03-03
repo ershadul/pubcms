@@ -1,21 +1,31 @@
 tinyMCE.init({
+	// General options
 	mode : "textareas",
 	theme : "advanced",
-	height : "300",
+	plugins : "layer,table,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,wordcount,advlist",
+
+	// Theme options
+	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect,fullscreen,code",
+	theme_advanced_buttons2 : "cut,copy,paste,pastetext,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,|,insertdate,inserttime,forecolor,backcolor",
+	theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl",
+
 	theme_advanced_toolbar_location : "top",
 	theme_advanced_toolbar_align : "left",
-	theme_advanced_buttons1 : "fullscreen,separator,preview,separator,bold,italic,underline,strikethrough,separator,bullist,numlist,outdent,indent,separator,undo,redo,separator,link,unlink,anchor,separator,image,media,cleanup,help,separator,code",
-	theme_advanced_buttons2 : "",
-	theme_advanced_buttons3 : "",
-	auto_cleanup_word : true,
-	plugins : "table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,searchreplace,print,contextmenu,fullscreen,media",
-	plugin_insertdate_dateFormat : "%m/%d/%Y",
-	plugin_insertdate_timeFormat : "%H:%M:%S",
-	extended_valid_elements : "a[name|href|target=_blank|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
-	fullscreen_settings : {
-		theme_advanced_path_location : "top",
-		theme_advanced_buttons1 : "fullscreen,separator,preview,separator,media,cut,copy,paste,separator,undo,redo,separator,search,replace,separator,code,separator,cleanup,separator,bold,italic,underline,strikethrough,separator,forecolor,backcolor,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,help",
-		theme_advanced_buttons2 : "removeformat,styleselect,formatselect,fontselect,fontsizeselect,separator,bullist,numlist,outdent,indent,separator,link,unlink,anchor",
-		theme_advanced_buttons3 : "sub,sup,separator,image,insertdate,inserttime,separator,tablecontrols,separator,hr,advhr,visualaid,separator,charmap,emotions,iespell,flash,separator,print"
-	}
+	theme_advanced_statusbar_location : "bottom",
+	theme_advanced_resizing : true,
+
+    theme_advanced_fonts : "SolaimanLipi,sans,serif,arial",
+    theme_advanced_font_sizes : "12px,14px,16px,18px,20px,22px,24px,26px,28px,30px,36px,40px,46px",
+
+	// Example content CSS (should be your site CSS)
+	//content_css : "/media/js/time_mce/css/editor.css",
+
+	//template_external_list_url : "lists/template_list.js",
+	//external_link_list_url : "lists/link_list.js",
+	//external_image_list_url : "lists/image_list.js",
+	//media_external_list_url : "lists/media_list.js",
+
+	width: '700',
+	height: '400'
+
 });

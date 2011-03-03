@@ -2,14 +2,14 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 
 
-#from django.contrib import admin
-#admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 handler404 = 'pubcms.views.show_404'
 handler500 = 'pubcms.views.show_500'
 
 urlpatterns = patterns('',
-    #(r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
     #(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
     (r'^feeds/', include('pubcms.feeds.urls')),
     (r'^issue/(?P<issue_date>[0-9\-]+)/article/', include('pubcms.articles.urls')),

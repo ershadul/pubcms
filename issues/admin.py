@@ -10,9 +10,11 @@ class IssueAdmin(admin.ModelAdmin):
     exclude = ['sections']
 
     class Media:
-        js = ('/media/js/jquery-1.4.2.min.js',
+        js = (
             '/media/js/tiny_mce/tiny_mce.js',
             '/media/js/textareas.js',
         )
 
 admin.site.register(Issue, IssueAdmin)
+
+

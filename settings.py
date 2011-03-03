@@ -5,22 +5,6 @@ def path(*x):
 	"""Get and return the relative path of x."""
 	return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
-DEBUG = True
-
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-     ('Ershadul Hoque Sarker', 'ershadulhoque@gmail.com'),
-)
-
-MANAGERS = ADMINS
-
-DATABASE_ENGINE = 'mysql'
-DATABASE_HOST = ''
-DATABASE_NAME = 'pubcms'
-DATABASE_USER = 'root'
-DATABASE_PASSWORD = ''
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
