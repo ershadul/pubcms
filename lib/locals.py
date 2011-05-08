@@ -27,7 +27,12 @@ def get_main_menu():
             'name': 'contact',
             'title': u'যোগাযোগ',
             'link': '/contact'
-        } ,
+        },
+        {
+            'name': 'post_article',
+            'title': u'লেখা জমা দিন',
+            'link': '/post-article'
+        },
         {
             'name': 'feedback',
             'title': u'মতামত',

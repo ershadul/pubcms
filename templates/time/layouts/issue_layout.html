@@ -3,6 +3,9 @@
 {% block content_header %}
     <div id="issue-info">
         <p class="status left">{% if issue.is_default %} {{ locals.current_issue }} {% else %} {{ locals.back_issue }} {% endif %}</p>
+        {% if issue.tag_line %}
+             <p class="status left" style="margin-left: 30px;">{{ issue.tag_line }}</p>
+        {% endif %}
         <div class="clear"></div>
         <h1 class="left">{{ issue.title }}</h1>
         <p class="right issue-number">

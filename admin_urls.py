@@ -5,6 +5,5 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
-    (r'^', include(admin.site.urls)),
+    (r'^(.*)', admin.site.root),
 )

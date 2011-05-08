@@ -6,6 +6,7 @@ from pubcms.sections.models import Section
 
 class Issue(models.Model):
     title = models.CharField(max_length=256)
+    tag_line = models.CharField(max_length=100, null=True, blank=True)
     published_at = models.DateField(unique=True, db_index=True)
     issue_year = models.CharField(max_length=25, blank=True, default='')
     issue_number = models.CharField(max_length=25, blank=True, default='')

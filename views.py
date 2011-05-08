@@ -63,9 +63,41 @@ def contact(request):
                 'link': '#'
             }
     )
-
-    #top_articles = Article.objects.filter(is_published=True).order_by('-n_clicks').all()
     return render_to_response(request.site.settings.template + '/contact.html',
+        {
+            'site': request.site,
+            'breadcrumb': breadcrumb,
+            'selected_menu': selected_menu,
+            'main_menus': request.main_menus,
+            'locals': request.locals,
+            'top_articles': request.top_articles
+        })
+
+def post_article(request):
+    menus = []
+    menus = request.main_menus
+    selected_menu = None
+    for m in menus:
+        if m['name'] == 'post_article':
+            m['is_selected'] = True
+            selected_menu = m
+            break
+
+    if not selected_menu:
+        raise Http404
+
+    breadcrumb = []
+    breadcrumb.append({
+             'name': request.locals['home'],
+             'link': '/'
+            })
+    breadcrumb.append(
+            {
+                'name': selected_menu['title'],
+                'link': '#'
+            }
+    )
+    return render_to_response(request.site.settings.template + '/post_article.html',
         {
             'site': request.site,
             'breadcrumb': breadcrumb,
