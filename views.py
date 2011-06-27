@@ -162,5 +162,5 @@ def robots(request):
 def show_404(request):
     return render_to_response('404.html')
 
-def show500(request):
+def show_500(request):
     return render_to_response('500.html')

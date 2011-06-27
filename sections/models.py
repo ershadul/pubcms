@@ -26,8 +26,8 @@ class Section(models.Model):
     published_sections = PublishedSectionManager()
     unpublished_sections = UnpublishedSectionManager()
 
-    class Meta:
-        ordering = ['order']
+    #class Meta:
+    #    ordering = ['order']
     
     def __unicode__(self):
         if self.parent:

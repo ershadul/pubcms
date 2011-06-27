@@ -1,5 +1,9 @@
 from django.contrib import admin
-from pubcms.issues.models import Issue
+from pubcms.issues.models import Issue, IssueSectionAssociation
+
+class IssueSectionAssociationInline(admin.TabularInline):
+    model = IssueSectionAssociation
+    extra = 10
 
 class IssueAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description', 'issue_year', 'issue_number']
@@ -7,7 +11,8 @@ class IssueAdmin(admin.ModelAdmin):
     
     list_display = ('id', 'title', 'published_at', 'issue_year', 'issue_number', 'is_published', 'is_default',)
     list_editable = ('title', 'published_at', 'issue_year', 'issue_number', 'is_published', )
-    exclude = ['sections']
+    #exclude = ['sections']
+    inlines = [IssueSectionAssociationInline,]
 
     class Media:
         js = (
@@ -16,5 +21,6 @@ class IssueAdmin(admin.ModelAdmin):
         )
 
 admin.site.register(Issue, IssueAdmin)
+admin.site.register(IssueSectionAssociation)
 
 

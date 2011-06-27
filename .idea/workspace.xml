@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03ca013d-b0ea-4a90-9be7-eeb3c63c6492" name="Default" comment="" />
+    <list default="true" id="03ca013d-b0ea-4a90-9be7-eeb3c63c6492" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/issues/admin.py" afterPath="$PROJECT_DIR$/issues/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/issues/models.py" afterPath="$PROJECT_DIR$/issues/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/issues/views.py" afterPath="$PROJECT_DIR$/issues/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sections/models.py" afterPath="$PROJECT_DIR$/sections/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views.py" afterPath="$PROJECT_DIR$/views.py" />
+    </list>
     <ignored path="pubcms.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,37 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="issue_layout.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/time/layouts/issue_layout.html">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/issues/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local_settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="38" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/issues/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="69" selection-start="780" selection-end="845" vertical-scroll-proportion="0.33861673">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/issues/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="26" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+            <state line="130" column="39" selection-start="4021" selection-end="4021" vertical-scroll-proportion="-1.0417868">
               <folding />
             </state>
           </provider>
@@ -73,22 +54,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/articles/admin.py" />
-        <option value="$PROJECT_DIR$/authors/admin.py" />
-        <option value="$PROJECT_DIR$/feedbacks/admin.py" />
-        <option value="$PROJECT_DIR$/sections/admin.py" />
         <option value="$PROJECT_DIR$/sitesettings/admin.py" />
         <option value="$PROJECT_DIR$/authors/models.py" />
         <option value="$PROJECT_DIR$/admin_urls.py" />
         <option value="$PROJECT_DIR$/middleware.py" />
         <option value="$PROJECT_DIR$/templates/admin/base.html" />
         <option value="$PROJECT_DIR$/lib/locals.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/views.py" />
         <option value="$PROJECT_DIR$/templates/time/post_article.html" />
-        <option value="$PROJECT_DIR$/issues/models.py" />
         <option value="$PROJECT_DIR$/templates/time/layouts/issue_layout.html" />
+        <option value="$PROJECT_DIR$/local_settings.py" />
+        <option value="$PROJECT_DIR$/views.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/issues/admin.py" />
+        <option value="$PROJECT_DIR$/issues/models.py" />
+        <option value="$PROJECT_DIR$/sections/models.py" />
+        <option value="$PROJECT_DIR$/issues/views.py" />
       </list>
     </option>
   </component>
@@ -138,8 +119,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
       <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,13 +233,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17983074" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17277856" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -303,51 +284,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/articles/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="14" selection-start="2450" selection-end="2450" vertical-scroll-proportion="0.7060519" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/locals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="10" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.52422905" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="22" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.29971182" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articles/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="52" selection-start="999" selection-end="999" vertical-scroll-proportion="0.4409222" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="215" selection-end="215" vertical-scroll-proportion="-1.6902018" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/time/post_article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/time/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="286" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/time/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -358,31 +294,86 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sections/models.py">
+    <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="26" column="42" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/time/layouts/issue_layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+        <state line="7" column="4" selection-start="354" selection-end="354" vertical-scroll-proportion="0.16017964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="25.153847" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/change_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="39" selection-start="76" selection-end="76" vertical-scroll-proportion="0.025954198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="16" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articles/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="52" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.12247839" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="50" selection-start="3654" selection-end="3654" vertical-scroll-proportion="3.1354468">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" />
+        <state line="12" column="23" selection-start="192" selection-end="198" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/issues/admin.py">
+    <entry file="file://$PROJECT_DIR$/sections/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" />
+        <state line="31" column="26" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.759366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="69" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/issues/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="69" selection-start="780" selection-end="845" vertical-scroll-proportion="0.33861673">
+        <state line="4" column="42" selection-start="110" selection-end="110" vertical-scroll-proportion="0.09798271">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="39" selection-start="4021" selection-end="4021" vertical-scroll-proportion="-1.0417868">
           <folding />
         </state>
       </provider>

@@ -15,7 +15,7 @@ class Issue(models.Model):
     image = models.ImageField(upload_to='covers', max_length=100, blank=True, null=True)
     keywords = models.TextField(blank=True, default='')
     description = models.TextField(default='', blank=True)
-    sections = models.ManyToManyField(Section, null=True, blank=True)
+    sections = models.ManyToManyField(Section, null=True, blank=True, through='IssueSectionAssociation')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -36,3 +36,10 @@ class Issue(models.Model):
     def __unicode__(self):
             return self.title
 
+class IssueSectionAssociation(models.Model):
+    issue = models.ForeignKey(Issue)
+    section = models.ForeignKey(Section)
+    order = models.IntegerField(default=1)
+
+    class Meta:
+        ordering = ['order']
